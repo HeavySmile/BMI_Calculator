@@ -17,7 +17,7 @@
                     <Label FontSize="Large" HorizontalOptions="Center" Text="Height (cm)" TextColor="Gray"/>
                     <gauge:SfLinearGauge Margin="0,15,0,0" Interval="50" Maximum="250" Minimum="25">
                         <gauge:SfLinearGauge.MarkerPointers>
-                            <gauge:LinearContentPointer x:Name="HeightPointer" IsInteractive="True" Position="Cross" Value="50">
+                            <gauge:LinearContentPointer x:Name="HeightPointer" IsInteractive="True" Position="Cross" Value="{Binding BMI.Height}">
                                 <gauge:LinearContentPointer.Content>
                                     <Grid HeightRequest="25" WidthRequest="50">
                                         <RoundRectangle CornerRadius="5" Fill="#ff0074E3"/>
@@ -38,7 +38,7 @@
                     <Label FontSize="Large" HorizontalOptions="Center" Text="Weight (kg)" TextColor="Gray"/>
                     <gauge:SfLinearGauge Margin="0,15,0,0" Interval="50" Maximum="150" Minimum="50">
                         <gauge:SfLinearGauge.MarkerPointers>
-                            <gauge:LinearContentPointer x:Name="WeightPointer" IsInteractive="True" Position="Cross" Value="50">
+                            <gauge:LinearContentPointer x:Name="WeightPointer" IsInteractive="True" Position="Cross" Value="{Binding BMI.Weight}">
                                 <gauge:LinearContentPointer.Content>
                                     <Grid HeightRequest="25" WidthRequest="50">
                                         <RoundRectangle CornerRadius="5" Fill="#ff0074E3"/>
@@ -56,7 +56,7 @@
 
             <Frame>
                 <VerticalStackLayout>
-                    <Label FontSize="Title" HorizontalOptions="Center" Text="Result: Normal"/>
+                    <Label FontSize="Title" HorizontalOptions="Center" Text="{Binding BMI.ResultText}"/>
                     <gauge:SfRadialGauge Margin="0,-60,0,-40">
                         <gauge:SfRadialGauge.Axes>
                             <gauge:RadialAxis Maximum="50" Minimum="0" ShowAxisLine="False" ShowLabels="False" ShowTicks="False">
@@ -86,7 +86,7 @@
                                                          NeedleEndWidth="15" 
                                                          NeedleLength="0.7" 
                                                          NeedleStartWidth="1"
-                                                         Value="25"/>
+                                                         Value="{Binding BMI.Result}"/>
                                 </gauge:RadialAxis.Pointers>
                             </gauge:RadialAxis>
                         </gauge:SfRadialGauge.Axes>
